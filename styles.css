@@ -2,7 +2,7 @@
     display: flex;
     margin: auto;
     flex-direction: column;
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .navbar {
@@ -52,7 +52,7 @@
 }
 
 .css-thead {
-    background-color: silver;
+    background-color: rgb(245, 208, 114);
 }
 
 .css-thead:nth-child(1) .css-th:first-child {
@@ -72,10 +72,6 @@
     height: 60px;
     color: black;
 }
-
-/* .css-tr:hover {
-    box-shadow: 10px 10px 5px gray;
-} */
 
 .css-thead .css-th:nth-child(3) {
     width: 200px;
@@ -129,15 +125,21 @@ h1 {
 
 .pagination > span {
     margin: 0 10px;
-    padding: 0 10px;
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.pageNumber:hover {
-    color:  white;
-    background-color: rgb(247, 191, 26);
+.pagenation-block {
+    display: flex;
+    justify-content: center;
+}
+
+.pagenation-block > span {
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 footer {
@@ -150,6 +152,7 @@ footer {
     會用到的ＣＳＳ
 =================*/
 .active-background {
+    width: 20px;
     color:  white;
     background-color: rgb(247, 191, 26);
 }

@@ -17,8 +17,8 @@
       </div>
       <span>五倍紅寶石 徵才網</span>
       <div class='search-bar'>
-        <input type="text" placeholder="輸入尋找條件">
-        <button class="search-button" data-page="1">Search</button>
+        <input type="text" class="search-input" placeholder="輸入尋找條件">
+        <button class="search-button">Search</button>
       </div>
     </div>
     <div>
@@ -27,41 +27,46 @@
       <span>註冊</span>
     </div>
   </div>
+
   <div class="container">
+    <div class="css-table">
+      <div class="css-thead">
+        <div class="css-th">日期</div>
+        <div class="css-th">職位名稱</div>
+        <div class="css-th">薪資</div>
+        <div class="css-th">公司名稱</div>
+        <div class="css-th">公司地址</div>
+      </div>
+      <div class="css-t-body">
+        <!-- 在這裡建立資料 -->
+      </div>
+    </div>
+    <div class="pagination">
+      <span class="backpage disabled">上一頁</span>
+      <div class="pagenation-block">
+        <!-- 在這裡建立頁碼 -->
+      </div>
+      <span class="nextpage">下一頁</span>
+    </div>
   </div>
-  <!-- <script src="job_improve.js"></script> -->
+
+  <template id="jobrow">
+    <a class="css-tr" href='#'>
+      <div class="css-td"></div>
+      <div class="css-td"></div>
+      <div class="css-td"></div>
+      <div class="css-td"></div>
+      <div class="css-td"></div>
+    </a>
+  </template>
+
+  <template id="pagenationrow">
+    <span></span>
+  </template>
 
   <footer>
     <p>5xCmapus © 2021 Ruby on Rails</p>
   </footer>
   <script src="job.js"></script>
 </body>
-
 </html>
-
-<!-- <div class="css-table">
-  <div class="css-thead">
-    <div class="css-tr">
-      <div class="css-th">日期</div>
-      <div class="css-th">職位名稱</div>
-      <div class="css-th">薪資</div>
-      <div class="css-th">公司名稱</div>
-      <div class="css-th">公司地址</div>
-    </div>
-  </div>
-  <div class="css-t-body">
-    <a class="css-tr" href='#'>
-      <div class="css-td">2021-04-01</div>
-      <div class="css-td">Rails 工程師</div>
-      <div class="css-td">40000 ~ 50000</div>
-      <div class="css-td">五倍紅寶石</div>
-      <div class="css-td">台北市中正區衡陽路7號5樓</div>
-    </a>
-  </div>
-</div>
-<div class="pagination">
-  <span class="backpage hidden">上一頁</span>
-  <span id="page1" class="pageNumber">1</span>
-  <span class="nextpage">下一頁</span>
-  <span class="page-counter"> 1/1 頁<span>
-</div> -->
