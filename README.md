@@ -4,40 +4,36 @@
 ![截圖 2021-04-22 下午12 29 29](https://user-images.githubusercontent.com/67591631/115655717-6e73b300-a366-11eb-9289-3f892d16ed42.png)
 
 #### 步驟一： 串接 API 將資料取回
-1. url => https://job-list-9527.herokuapp.com/api/v1/jobs/job_info 。
+1. url => `https://job-list-9527.herokuapp.com/api/v1/jobs/job_info?page=${Page}` 。
 2. 可以在開發者工具 console 裡看到 fetch 回來的資料。
-<img width="543" alt="截圖 2021-04-27 上午9 18 16" src="https://user-images.githubusercontent.com/67591631/116170519-8cac2b00-a739-11eb-9947-fdb6f9222e99.png">
+<img width="831" alt="截圖 2021-07-29 下午1 41 47" src="https://user-images.githubusercontent.com/67591631/127441503-0a078b0e-f95f-4df0-8d7b-68a4b2d77f59.png">
 
 #### 步驟二： Render 職缺資訊
-1. 根據下面的 template 填入相對應的欄位資料，並渲染在 `<div class="container"> 目標位置 </div>` 裡面 。
-<br>
+1. 根據下面的 template 填入相對應的欄位資料，並渲染在 
+```
+<div class="css-t-body">
+  <!-- 在這裡建立資料 -->
+</div>` 裡面 。
+<div class="pagenation-block">
+  <!-- 在這裡建立頁碼 -->
+</div>
+```
 template:
 
-```<div class="css-table">
-  <div class="css-thead">
-    <div class="css-tr">
-      <div class="css-th">日期</div>
-      <div class="css-th">職位名稱</div>
-      <div class="css-th">薪資</div>
-      <div class="css-th">公司名稱</div>
-      <div class="css-th">公司地址</div>
-    </div>
-  </div>
-  <div class="css-t-body">
-    <a class="css-tr" href='#'>
-      <div class="css-td">2021-04-01</div>
-      <div class="css-td">Rails 工程師</div>
-      <div class="css-td">40000 ~ 50000</div>
-      <div class="css-td">五倍紅寶石</div>
-      <div class="css-td">台北市中正區衡陽路7號5樓</div>
+```
+<template id="jobrow">
+    <a class="css-tr" href=job.link>
+      <div class="css-td">job.date</div>
+      <div class="css-td">job.name</div>
+      <div class="css-td">job.salary</div>
+      <div class="css-td">job.company_name</div>
+      <div class="css-td">job.address</div>
     </a>
-  </div>
-</div>
-<div class="pagination">
-  <span class="backpage hidden">上一頁</span>
-  <span class="nextpage">下一頁</span>
-  <span class="page-counter"> 1/1 頁<span>
-</div>
+  </template>
+
+  <template id="pagenationrow">
+    <span></span>
+  </template>
 ```
     
 註解：<br>
@@ -69,7 +65,7 @@ template:
 ![截圖 2021-04-27 上午9 24 49](https://user-images.githubusercontent.com/67591631/116170988-7c488000-a73a-11eb-8090-a3a369264291.png)
 
 #### 步驟五：搜尋
-1. urlSearch => 'https://job-list-9527.herokuapp.com/api/v1/jobs/search?q=要帶入的搜尋參數'
+1. urlSearch => `https://job-list-9527.herokuapp.com/api/v1/jobs/search?q=${query}&page=${Page}`
 2. 搜尋後的頁面功能均須包含前四個步驟。
 ![搜尋3](https://user-images.githubusercontent.com/67591631/116171833-270d6e00-a73c-11eb-8178-e60bae13b9c7.gif)
 3. 當查詢結果為 0 時，欄位內容需給'查無條件'。 
